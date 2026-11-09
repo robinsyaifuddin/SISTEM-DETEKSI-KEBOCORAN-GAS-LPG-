@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 
 export default function Sidebar({ activeTab, setActiveTab, deviceStatus }) {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
 
   const navItems = [
     { id: 'dashboard', label: 'Dashboard Real-time', icon: LayoutDashboard },

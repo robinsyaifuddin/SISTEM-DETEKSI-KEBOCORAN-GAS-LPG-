@@ -227,8 +227,8 @@ export default function App() {
 
         <main className="p-6 space-y-6 flex-1 overflow-y-auto">
           {/* Quick Simulation Bar (Tersedia di semua view untuk demo langsung) */}
-          <div className="p-3 bg-white border border-slate-200/80 rounded-xl flex flex-wrap items-center justify-between gap-3 text-xs">
-            <div className="flex items-center gap-2 text-slate-600 font-medium">
+          <div className="p-3 bg-white border border-slate-300 rounded-xl flex flex-wrap items-center justify-between gap-3 text-xs shadow-sm">
+            <div className="flex items-center gap-2 text-black font-semibold">
               <Sliders className="w-4 h-4 text-blue-600" />
               <span>Simulasi Cepat Status Sensor (Uji Respon Sistem):</span>
             </div>

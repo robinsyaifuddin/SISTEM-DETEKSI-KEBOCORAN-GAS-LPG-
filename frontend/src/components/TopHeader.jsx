@@ -5,10 +5,10 @@ export default function TopHeader({ lastSync, isLive }) {
   return (
     <header className="h-16 border-b border-slate-200/80 bg-white/90 backdrop-blur-md px-6 flex items-center justify-between sticky top-0 z-20">
       <div>
-        <h1 className="text-base font-bold text-slate-900 tracking-tight flex items-center gap-2">
+        <h1 className="text-base font-bold text-black tracking-tight flex items-center gap-2">
           Dashboard Pemantauan Kebocoran Gas LPG & Kualitas Udara
         </h1>
-        <p className="text-xs text-slate-500 font-normal mt-0.5">
+        <p className="text-xs text-black font-medium mt-0.5">
           Laboratorium Teknik Telekomunikasi ITERA • Interval Polling: 3 Detik
         </p>
       </div>
