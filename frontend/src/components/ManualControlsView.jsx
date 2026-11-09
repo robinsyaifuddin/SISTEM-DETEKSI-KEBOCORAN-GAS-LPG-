@@ -119,11 +119,9 @@ export default function ManualControlsView({ manualOverrides, setManualOverrides
           <div>
             <div className="flex items-center justify-between pb-3 border-b border-slate-100">
               <div className="flex items-center gap-3">
-                <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-                  manualOverrides.fan ? 'bg-indigo-600 text-white animate-spin' : 'bg-slate-100 text-slate-400'
-                }`}>
-                  <Fan className="w-5 h-5" />
-                </div>
+                <Fan className={`w-7 h-7 shrink-0 ${
+                  manualOverrides.fan ? 'text-indigo-600 animate-spin' : 'text-slate-400'
+                }`} />
                 <div>
                   <h3 className="font-semibold text-slate-800 text-sm">Relay Kipas Exhaust 12V</h3>
                   <p className="text-[11px] text-slate-400">GPIO Pin D5 • Modul Relay 1-Channel Aktif Low</p>
@@ -178,11 +176,11 @@ export default function ManualControlsView({ manualOverrides, setManualOverrides
           <div>
             <div className="flex items-center justify-between pb-3 border-b border-slate-100">
               <div className="flex items-center gap-3">
-                <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-                  manualOverrides.buzzer ? 'bg-rose-600 text-white animate-pulse' : 'bg-slate-100 text-slate-400'
-                }`}>
-                  {manualOverrides.buzzer ? <Volume2 className="w-5 h-5" /> : <VolumeX className="w-5 h-5" />}
-                </div>
+                {manualOverrides.buzzer ? (
+                  <Volume2 className="w-7 h-7 text-rose-600 shrink-0 animate-pulse" />
+                ) : (
+                  <VolumeX className="w-7 h-7 text-slate-400 shrink-0" />
+                )}
                 <div>
                   <h3 className="font-semibold text-slate-800 text-sm">Alarm Buzzer Piezokeramik</h3>
                   <p className="text-[11px] text-slate-400">GPIO Pin D4 • Transduser Frekuensi 2.4 kHz</p>

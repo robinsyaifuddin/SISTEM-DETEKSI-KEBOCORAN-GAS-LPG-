@@ -28,8 +28,8 @@ export default function MetricCardsGrid({ telemetry, thresholds }) {
     switch (level) {
       case 1:
         return {
-          bg: 'bg-emerald-50',
-          border: 'border-emerald-200',
+          bg: 'bg-emerald-50/50',
+          border: 'border-emerald-200/80',
           text: 'text-emerald-700',
           dot: 'bg-emerald-500',
           title: 'LEVEL 1: AMAN',
@@ -37,8 +37,8 @@ export default function MetricCardsGrid({ telemetry, thresholds }) {
         };
       case 2:
         return {
-          bg: 'bg-amber-50',
-          border: 'border-amber-200',
+          bg: 'bg-amber-50/50',
+          border: 'border-amber-200/80',
           text: 'text-amber-800',
           dot: 'bg-amber-500',
           title: 'LEVEL 2: WASPADA',
@@ -46,8 +46,8 @@ export default function MetricCardsGrid({ telemetry, thresholds }) {
         };
       case 3:
         return {
-          bg: 'bg-rose-50',
-          border: 'border-rose-200',
+          bg: 'bg-rose-50/50',
+          border: 'border-rose-200/80',
           text: 'text-rose-700',
           dot: 'bg-rose-500',
           title: 'LEVEL 3: BAHAYA GAS',
@@ -56,7 +56,7 @@ export default function MetricCardsGrid({ telemetry, thresholds }) {
       case 4:
       default:
         return {
-          bg: 'bg-red-100',
+          bg: 'bg-red-50',
           border: 'border-red-300',
           text: 'text-red-900',
           dot: 'bg-red-600',
@@ -74,9 +74,7 @@ export default function MetricCardsGrid({ telemetry, thresholds }) {
       <div className={`p-4 rounded-xl bg-white border transition-all ${isGasExceeded ? 'border-rose-300 ring-2 ring-rose-100' : 'border-slate-200/90'} shadow-sm`}>
         <div className="flex items-center justify-between text-slate-500 mb-2">
           <span className="text-xs font-semibold tracking-wide uppercase">Konsentrasi Gas LPG</span>
-          <div className={`p-1.5 rounded-lg ${isGasExceeded ? 'bg-rose-100 text-rose-600' : 'bg-slate-100 text-slate-600'}`}>
-            <Flame className="w-4 h-4" />
-          </div>
+          <Flame className={`w-5 h-5 ${isGasExceeded ? 'text-rose-600 animate-pulse' : 'text-slate-400'}`} />
         </div>
         <div className="flex items-baseline gap-1.5">
           <span className="text-2xl font-bold font-mono tracking-tight text-slate-900">{mq5_ppm.toFixed(1)}</span>
@@ -92,9 +90,7 @@ export default function MetricCardsGrid({ telemetry, thresholds }) {
       <div className={`p-4 rounded-xl bg-white border transition-all ${isDustExceeded ? 'border-amber-300 ring-2 ring-amber-100' : 'border-slate-200/90'} shadow-sm`}>
         <div className="flex items-center justify-between text-slate-500 mb-2">
           <span className="text-xs font-semibold tracking-wide uppercase">Kepekatan Asap</span>
-          <div className={`p-1.5 rounded-lg ${isDustExceeded ? 'bg-amber-100 text-amber-600' : 'bg-slate-100 text-slate-600'}`}>
-            <CloudFog className="w-4 h-4" />
-          </div>
+          <CloudFog className={`w-5 h-5 ${isDustExceeded ? 'text-amber-500' : 'text-slate-400'}`} />
         </div>
         <div className="flex items-baseline gap-1.5">
           <span className="text-2xl font-bold font-mono tracking-tight text-slate-900">{gp2y_dust_density.toFixed(1)}</span>
@@ -110,9 +106,7 @@ export default function MetricCardsGrid({ telemetry, thresholds }) {
       <div className="p-4 rounded-xl bg-white border border-slate-200/90 shadow-sm">
         <div className="flex items-center justify-between text-slate-500 mb-2">
           <span className="text-xs font-semibold tracking-wide uppercase">Kipas Exhaust</span>
-          <div className={`p-1.5 rounded-lg ${fan_status === 'ON' ? 'bg-blue-100 text-blue-600' : 'bg-slate-100 text-slate-500'}`}>
-            <Fan className={`w-4 h-4 ${fan_status === 'ON' ? 'animate-spin' : ''}`} />
-          </div>
+          <Fan className={`w-5 h-5 ${fan_status === 'ON' ? 'text-blue-600 animate-spin' : 'text-slate-400'}`} />
         </div>
         <div className="flex items-baseline gap-2">
           <span className={`text-2xl font-bold font-mono tracking-tight ${fan_status === 'ON' ? 'text-blue-600' : 'text-slate-800'}`}>
@@ -132,9 +126,7 @@ export default function MetricCardsGrid({ telemetry, thresholds }) {
       <div className="p-4 rounded-xl bg-white border border-slate-200/90 shadow-sm">
         <div className="flex items-center justify-between text-slate-500 mb-2">
           <span className="text-xs font-semibold tracking-wide uppercase">Alarm Buzzer</span>
-          <div className={`p-1.5 rounded-lg ${buzzer_status === 'ON' ? 'bg-rose-100 text-rose-600' : 'bg-slate-100 text-slate-500'}`}>
-            <Volume2 className="w-4 h-4" />
-          </div>
+          <Volume2 className={`w-5 h-5 ${buzzer_status === 'ON' ? 'text-rose-600 animate-pulse' : 'text-slate-400'}`} />
         </div>
         <div className="flex items-baseline gap-2">
           <span className={`text-2xl font-bold font-mono tracking-tight ${buzzer_status === 'ON' ? 'text-rose-600' : 'text-slate-800'}`}>
@@ -159,14 +151,12 @@ export default function MetricCardsGrid({ telemetry, thresholds }) {
             <span className={`w-2 h-2 rounded-full ${levelInfo.dot}`}></span>
           </div>
         </div>
-        <div className="text-xl font-bold tracking-tight text-slate-900 leading-none">
-          {levelInfo.title}
+        <div className="flex flex-col">
+          <span className={`text-base font-bold tracking-tight ${levelInfo.text}`}>{levelInfo.title}</span>
+          <span className="text-[11px] font-medium text-slate-600 mt-0.5">{levelInfo.desc}</span>
         </div>
-        <div className="mt-1 text-xs font-medium text-slate-600 truncate">
-          {levelInfo.desc}
-        </div>
-        <div className="mt-2.5 pt-2 border-t border-slate-200/60 text-[11px] font-semibold tracking-wider uppercase text-slate-500">
-          {security_status}
+        <div className="mt-2.5 pt-2 border-t border-slate-200/60 text-[11px] font-semibold text-slate-600 flex justify-between items-center">
+          <span>{security_status}</span>
         </div>
       </div>
     </div>

@@ -25,9 +25,7 @@ export default function Sidebar({ activeTab, setActiveTab, deviceStatus }) {
       <div>
         {/* Brand Header */}
         <div className="p-5 border-b border-slate-100 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-sm shadow-blue-500/20">
-            <Flame className="w-5 h-5 text-amber-300" />
-          </div>
+          <Flame className="w-7 h-7 text-blue-600 shrink-0" />
           <div>
             <div className="font-bold text-slate-900 tracking-tight text-base leading-tight">LPG-GUARD</div>
             <div className="text-[11px] font-medium text-slate-500 uppercase tracking-wider mt-0.5">ITERA IoT System</div>

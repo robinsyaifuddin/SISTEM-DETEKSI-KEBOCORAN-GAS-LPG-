@@ -83,9 +83,7 @@ export default function ThresholdSettingsView({ thresholds, onSaveThresholds, on
           <div className="bg-white border border-slate-200/80 rounded-xl p-5 shadow-sm space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-slate-100">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center">
-                  <Flame className="w-5 h-5" />
-                </div>
+                <Flame className="w-6 h-6 text-rose-600 shrink-0" />
                 <div>
                   <h3 className="font-semibold text-slate-800 text-sm">Ambang Batas Gas LPG (MQ-5)</h3>
                   <p className="text-[11px] text-slate-400">Satuan Part Per Million (PPM)</p>
@@ -132,9 +130,7 @@ export default function ThresholdSettingsView({ thresholds, onSaveThresholds, on
           <div className="bg-white border border-slate-200/80 rounded-xl p-5 shadow-sm space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-slate-100">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
-                  <CloudFog className="w-5 h-5" />
-                </div>
+                <CloudFog className="w-6 h-6 text-blue-600 shrink-0" />
                 <div>
                   <h3 className="font-semibold text-slate-800 text-sm">Ambang Batas Kepekatan Asap (GP2Y)</h3>
                   <p className="text-[11px] text-slate-400">Satuan Mikrogram per Meter Kubik (µg/m³)</p>
